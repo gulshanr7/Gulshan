@@ -1,0 +1,33 @@
+<html>
+<link rel="stylesheet" href="demo.css">
+  <body>
+    <div class="container">
+      <button class="button" onclick="start()">Start</button>
+      <button class="button" onclick="stop()">Stop</button>
+      <button class="button" onclick="reset()">Reset</button>
+    </div>
+    <p id="timer">0</p>
+    
+    <script>
+      let seconds = 0;
+      let timer;
+      
+      function start() {
+        timer = setInterval(function() {
+          seconds++;
+          document.getElementById("timer").innerHTML = seconds;
+        }, 1000);
+      }
+      
+      function stop() {
+        clearInterval(timer);
+      }
+      
+      function reset() {
+        clearInterval(timer);
+        seconds = 0;
+        document.getElementById("timer").innerHTML = seconds;
+      }
+    </script>
+  </body>
+</html>
